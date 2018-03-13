@@ -1,8 +1,6 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="admin.master.cs" Inherits="sample_internal.admin" %>
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="staff_advisor.master.cs" Inherits="sample_internal.staff_advisor" %>
 
 <!DOCTYPE html>
-
-
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head id="Head1" runat="server">
@@ -225,26 +223,17 @@
                   <li class="sub-menu">
                       <a href="javascript:;" >
                           <i class="fa fa-desktop"></i>
-                          <span>Attendance</span>
+                          <span>Internal Grade Card Generation</span>
                       </a>
                       <ul class="sub">
-                          <li><a  href="admin-add_dept_new.aspx">Manage Departments</a></li>
+                          <li><a  href="staff_advisor_home.aspx">Home</a></li>
                                           
                       </ul>
-                       <ul class="sub">
-                          <li><a  href="admin-add_course_new.aspx">Manage Courses</a></li>
-                                          
-                      </ul>
-                      <ul class="sub">
-                          <li><a  href="admin-add_batch_new.aspx">Manage Batches</a></li>
-                                          
-                      </ul>
-                        <ul class="sub">
-                          <li><a  href="hod-add_faculty_type_new.aspx">Manage Designations</a></li>
-                 </ul>
-                      <ul class="sub">
-                          <li><a  href="hod-add_subject_new.aspx">Manage Subjects</a></li>
-                 </ul>
+
+                      
+                       
+                     
+
                   </li>
 
            
@@ -375,4 +364,3 @@
 
 </body>
 </html>
-
