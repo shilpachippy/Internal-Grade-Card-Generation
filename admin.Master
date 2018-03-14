@@ -240,10 +240,13 @@
                                           
                       </ul>
                         <ul class="sub">
-                          <li><a  href="hod-add_faculty_type_new.aspx">Manage Designations</a></li>
+                          <li><a  href="admin-add_facultytype_new.aspx">Manage Designations</a></li>
                  </ul>
                       <ul class="sub">
-                          <li><a  href="hod-add_subject_new.aspx">Manage Subjects</a></li>
+                          <li><a  href="admin-add_subject_new.aspx">Manage Subjects</a></li>
+                 </ul>
+                      <ul class="sub">
+                          <li><a  href="admin-add_staff_reg_new.aspx">Manage Subjects</a></li>
                  </ul>
                   </li>
 

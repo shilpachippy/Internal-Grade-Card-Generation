@@ -172,7 +172,7 @@ namespace sample_internal
                 SqlConnection con = new SqlConnection("Data Source=.\\sqlexpress;Initial Catalog=college_management;User ID=sa;Password=admin42");
                 con.Open();
 
-                SqlCommand cmd2 = new SqlCommand("select * from tbl_internal_marks where batch_id='" + ddl_batch.SelectedItem.Value + "' and exam_id='" + ddl_exam_title.SelectedItem.Value + "' and subject_code='" + ddl_subject_code.SelectedItem.Text + "' and roll_vo='"+r+"' ", con);
+                SqlCommand cmd2 = new SqlCommand("select * from tbl_internal_marks where batch_id='" + ddl_batch.SelectedItem.Value + "' and exam_id='" + ddl_exam_title.SelectedItem.Value + "' and subject_code='" + ddl_subject_code.SelectedItem.Text + "' and roll_no='" + r + "' ", con);
                 cmd2.ExecuteNonQuery();
                 SqlDataAdapter da2 = new SqlDataAdapter(cmd2);
                 DataTable dt2 = new DataTable();
@@ -181,6 +181,7 @@ namespace sample_internal
                 {
 
                     Response.Write("<script  >alert('Already Entered')</script>");
+                    
 
                 }
                 else

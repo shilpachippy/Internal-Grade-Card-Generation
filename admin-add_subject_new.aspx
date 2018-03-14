@@ -51,35 +51,12 @@
             width: 68px;
             height: 22px;
         }
-        .auto-style20 {
-            width: 345px;
-            height: 40px;
-        }
-        .auto-style21 {
-            height: 40px;
-        }
-        .auto-style22 {
-            width: 122px;
-            height: 40px;
-        }
-        .auto-style23 {
-            width: 68px;
-            height: 40px;
-        }
-        .auto-style24 {
-            width: 58px;
-            height: 40px;
-        }
         .auto-style25 {
             height: 18px;
             text-align: justify;
         }
         .auto-style26 {
             width: 22px;
-        }
-        .auto-style27 {
-            width: 22px;
-            height: 40px;
         }
         .auto-style28 {
             height: 22px;
@@ -89,37 +66,17 @@
             width: 22px;
             height: 18px;
         }
+        .auto-style30 {
+            text-decoration: underline;
+            color: #CC33FF;
+        }
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <table class="nav-justified">
         <tr>
-            <td class="auto-style3">A</td>
-            <td class="auto-style26">&nbsp;</td>
-            <td class="auto-style2">&nbsp;</td>
-            <td class="auto-style17">&nbsp;</td>
-            <td class="auto-style10">&nbsp;</td>
-            <td>&nbsp;</td>
-        </tr>
-        <tr>
-            <td class="auto-style3">&nbsp;</td>
-            <td class="auto-style26">&nbsp;</td>
-            <td class="auto-style2">&nbsp;</td>
-            <td class="auto-style17">&nbsp;</td>
-            <td class="auto-style10">&nbsp;</td>
-            <td>&nbsp;</td>
-        </tr>
-        <tr>
-            <td class="auto-style20"></td>
-            <td class="auto-style27"></td>
-            <td class="auto-style22"></td>
-            <td class="auto-style23">&nbsp;</td>
-            <td class="auto-style24"></td>
-            <td class="auto-style21"></td>
-        </tr>
-        <tr>
             <td class="auto-style11" colspan="2">&nbsp;</td>
-            <td class="auto-style25" colspan="4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>ADD SUBJECT&nbsp;</strong></td>
+            <td class="auto-style25" colspan="4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; <span class="auto-style30"> <strong>ADD SUBJECT&nbsp;</strong></span></td>
         </tr>
         <tr>
             <td class="auto-style11" colspan="2">&nbsp;</td>
