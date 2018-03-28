@@ -1,0 +1,330 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="TestData" targetNamespace="http://tempuri.org/TestData.xsd" xmlns:mstns="http://tempuri.org/TestData.xsd" xmlns="http://tempuri.org/TestData.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Web.config" AppSettingsPropertyName="college_managementConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="college_managementConnectionString (Web.config)" ParameterPrefix="@" PropertyReference="AppConfig.System.Configuration.ConfigurationManager.0.ConnectionStrings.college_managementConnectionString.ConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="DataTable2TableAdapter" GeneratorDataComponentClassName="DataTable2TableAdapter" Name="DataTable2" UserDataComponentName="DataTable2TableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="college_managementConnectionString (Web.config)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>select tbl_internal_marks.subject_code, tbl_subject_new.subject,tbl_exam_details.max_mark, tbl_internal_marks.mark 
+ from tbl_subject_new,tbl_internal_marks ,tbl_exam_details
+ where tbl_subject_new.subject_code=tbl_internal_marks.subject_code  and tbl_exam_details.exam_id=tbl_internal_marks.exam_id  and tbl_internal_marks.roll_no=3
+</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="subject_code" DataSetColumn="subject_code" />
+              <Mapping SourceColumn="subject" DataSetColumn="subject" />
+              <Mapping SourceColumn="max_mark" DataSetColumn="max_mark" />
+              <Mapping SourceColumn="mark" DataSetColumn="mark" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="DataTable1TableAdapter" GeneratorDataComponentClassName="DataTable1TableAdapter" Name="DataTable1" UserDataComponentName="DataTable1TableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="college_managementConnectionString (Web.config)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>select tbl_student.student_id,tbl_student.student_name,tbl_internal_marks.semester, tbl_student.roll_no,tbl_internal_marks.internal_id,tbl_subject_new.subject_id,tbl_internal_marks.subject_code,tbl_subject_new.subject ,tbl_exam_details.exam_id,tbl_exam_details.max_mark, tbl_internal_marks.mark ,tbl_exam_details.exam_name
+from tbl_student ,tbl_exam_details,tbl_internal_marks inner join tbl_subject_new on tbl_subject_new.subject_code=tbl_internal_marks.subject_code
+where tbl_student.roll_no=tbl_internal_marks.roll_no and tbl_exam_details.exam_id=tbl_internal_marks.exam_id</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="student_id" DataSetColumn="student_id" />
+              <Mapping SourceColumn="student_name" DataSetColumn="student_name" />
+              <Mapping SourceColumn="semester" DataSetColumn="semester" />
+              <Mapping SourceColumn="roll_no" DataSetColumn="roll_no" />
+              <Mapping SourceColumn="internal_id" DataSetColumn="internal_id" />
+              <Mapping SourceColumn="subject_id" DataSetColumn="subject_id" />
+              <Mapping SourceColumn="subject_code" DataSetColumn="subject_code" />
+              <Mapping SourceColumn="subject" DataSetColumn="subject" />
+              <Mapping SourceColumn="exam_id" DataSetColumn="exam_id" />
+              <Mapping SourceColumn="max_mark" DataSetColumn="max_mark" />
+              <Mapping SourceColumn="mark" DataSetColumn="mark" />
+              <Mapping SourceColumn="exam_name" DataSetColumn="exam_name" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="MarksTableAdapter" GeneratorDataComponentClassName="MarksTableAdapter" Name="MarksTable" UserDataComponentName="MarksTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="college_managementConnectionString (Web.config)" DbObjectName="college_management.dbo.Get_Grades" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
+                    <CommandText>dbo.Get_Grades</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="ReturnValue" ParameterName="@RETURN_VALUE" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@examid" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@batchid" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@sem" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="student_id" DataSetColumn="student_id" />
+              <Mapping SourceColumn="student_name" DataSetColumn="student_name" />
+              <Mapping SourceColumn="semester" DataSetColumn="semester" />
+              <Mapping SourceColumn="roll_no" DataSetColumn="roll_no" />
+              <Mapping SourceColumn="internal_id" DataSetColumn="internal_id" />
+              <Mapping SourceColumn="subject_id" DataSetColumn="subject_id" />
+              <Mapping SourceColumn="subject_code" DataSetColumn="subject_code" />
+              <Mapping SourceColumn="subject" DataSetColumn="subject" />
+              <Mapping SourceColumn="exam_id" DataSetColumn="exam_id" />
+              <Mapping SourceColumn="max_mark" DataSetColumn="max_mark" />
+              <Mapping SourceColumn="mark" DataSetColumn="mark" />
+              <Mapping SourceColumn="exam_name" DataSetColumn="exam_name" />
+              <Mapping SourceColumn="attendence" DataSetColumn="attendence" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="new tableTableAdapter" GeneratorDataComponentClassName="new_tableTableAdapter" Name="new table" UserDataComponentName="new tableTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="college_managementConnectionString (Web.config)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>select tbl_batch.batch_id,tbl_batch.batch_name, tbl_student.student_id,tbl_student.student_name,tbl_internal_marks.semester, tbl_student.roll_no,tbl_internal_marks.internal_id,tbl_subject_new.subject_id,tbl_internal_marks.subject_code,tbl_subject_new.subject ,tbl_exam_details.exam_id,tbl_exam_details.max_mark, tbl_internal_marks.mark ,tbl_exam_details.exam_name,tbl_internal_marks.attendence
+from tbl_batch, tbl_student ,tbl_exam_details,tbl_internal_marks inner join tbl_subject_new
+ on tbl_subject_new.subject_code=tbl_internal_marks.subject_code
+where tbl_student.roll_no=tbl_internal_marks.roll_no and tbl_exam_details.exam_id=tbl_internal_marks.exam_id and tbl_batch.batch_id=tbl_student.batch_id order by tbl_student.roll_no</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="batch_id" DataSetColumn="batch_id" />
+              <Mapping SourceColumn="batch_name" DataSetColumn="batch_name" />
+              <Mapping SourceColumn="student_id" DataSetColumn="student_id" />
+              <Mapping SourceColumn="student_name" DataSetColumn="student_name" />
+              <Mapping SourceColumn="semester" DataSetColumn="semester" />
+              <Mapping SourceColumn="roll_no" DataSetColumn="roll_no" />
+              <Mapping SourceColumn="internal_id" DataSetColumn="internal_id" />
+              <Mapping SourceColumn="subject_id" DataSetColumn="subject_id" />
+              <Mapping SourceColumn="subject_code" DataSetColumn="subject_code" />
+              <Mapping SourceColumn="subject" DataSetColumn="subject" />
+              <Mapping SourceColumn="exam_id" DataSetColumn="exam_id" />
+              <Mapping SourceColumn="max_mark" DataSetColumn="max_mark" />
+              <Mapping SourceColumn="mark" DataSetColumn="mark" />
+              <Mapping SourceColumn="exam_name" DataSetColumn="exam_name" />
+              <Mapping SourceColumn="attendence" DataSetColumn="attendence" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="TestData" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="TestData" msprop:Generator_UserDSName="TestData">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="MarksTable" msprop:Generator_TableClassName="MarksTableDataTable" msprop:Generator_TableVarName="tableMarksTable" msprop:Generator_TablePropName="MarksTable" msprop:Generator_RowDeletingName="MarksTableRowDeleting" msprop:Generator_RowChangingName="MarksTableRowChanging" msprop:Generator_RowEvHandlerName="MarksTableRowChangeEventHandler" msprop:Generator_RowDeletedName="MarksTableRowDeleted" msprop:Generator_UserTableName="MarksTable" msprop:Generator_RowChangedName="MarksTableRowChanged" msprop:Generator_RowEvArgName="MarksTableRowChangeEvent" msprop:Generator_RowClassName="MarksTableRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="student_id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnstudent_id" msprop:Generator_ColumnPropNameInRow="student_id" msprop:Generator_ColumnPropNameInTable="student_idColumn" msprop:Generator_UserColumnName="student_id" type="xs:int" />
+              <xs:element name="student_name" msprop:Generator_ColumnVarNameInTable="columnstudent_name" msprop:Generator_ColumnPropNameInRow="student_name" msprop:Generator_ColumnPropNameInTable="student_nameColumn" msprop:Generator_UserColumnName="student_name" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="semester" msprop:Generator_ColumnVarNameInTable="columnsemester" msprop:Generator_ColumnPropNameInRow="semester" msprop:Generator_ColumnPropNameInTable="semesterColumn" msprop:Generator_UserColumnName="semester" type="xs:decimal" minOccurs="0" />
+              <xs:element name="roll_no" msprop:Generator_ColumnVarNameInTable="columnroll_no" msprop:Generator_ColumnPropNameInRow="roll_no" msprop:Generator_ColumnPropNameInTable="roll_noColumn" msprop:Generator_UserColumnName="roll_no" type="xs:decimal" minOccurs="0" />
+              <xs:element name="internal_id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columninternal_id" msprop:Generator_ColumnPropNameInRow="internal_id" msprop:Generator_ColumnPropNameInTable="internal_idColumn" msprop:Generator_UserColumnName="internal_id" type="xs:int" />
+              <xs:element name="subject_id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnsubject_id" msprop:Generator_ColumnPropNameInRow="subject_id" msprop:Generator_ColumnPropNameInTable="subject_idColumn" msprop:Generator_UserColumnName="subject_id" type="xs:int" />
+              <xs:element name="subject_code" msprop:Generator_ColumnVarNameInTable="columnsubject_code" msprop:Generator_ColumnPropNameInRow="subject_code" msprop:Generator_ColumnPropNameInTable="subject_codeColumn" msprop:Generator_UserColumnName="subject_code" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="subject" msprop:Generator_ColumnVarNameInTable="columnsubject" msprop:Generator_ColumnPropNameInRow="subject" msprop:Generator_ColumnPropNameInTable="subjectColumn" msprop:Generator_UserColumnName="subject" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="exam_id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnexam_id" msprop:Generator_ColumnPropNameInRow="exam_id" msprop:Generator_ColumnPropNameInTable="exam_idColumn" msprop:Generator_UserColumnName="exam_id" type="xs:int" />
+              <xs:element name="max_mark" msprop:Generator_ColumnVarNameInTable="columnmax_mark" msprop:Generator_ColumnPropNameInRow="max_mark" msprop:Generator_ColumnPropNameInTable="max_markColumn" msprop:Generator_UserColumnName="max_mark" type="xs:decimal" minOccurs="0" />
+              <xs:element name="mark" msprop:Generator_ColumnVarNameInTable="columnmark" msprop:Generator_ColumnPropNameInRow="mark" msprop:Generator_ColumnPropNameInTable="markColumn" msprop:Generator_UserColumnName="mark" type="xs:decimal" minOccurs="0" />
+              <xs:element name="exam_name" msprop:Generator_ColumnVarNameInTable="columnexam_name" msprop:Generator_ColumnPropNameInRow="exam_name" msprop:Generator_ColumnPropNameInTable="exam_nameColumn" msprop:Generator_UserColumnName="exam_name" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="attendence" msprop:Generator_ColumnVarNameInTable="columnattendence" msprop:Generator_ColumnPropNameInRow="attendence" msprop:Generator_ColumnPropNameInTable="attendenceColumn" msprop:Generator_UserColumnName="attendence" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="DataTable2" msprop:Generator_TableClassName="DataTable2DataTable" msprop:Generator_TableVarName="tableDataTable2" msprop:Generator_RowChangedName="DataTable2RowChanged" msprop:Generator_TablePropName="DataTable2" msprop:Generator_RowDeletingName="DataTable2RowDeleting" msprop:Generator_RowChangingName="DataTable2RowChanging" msprop:Generator_RowEvHandlerName="DataTable2RowChangeEventHandler" msprop:Generator_RowDeletedName="DataTable2RowDeleted" msprop:Generator_RowClassName="DataTable2Row" msprop:Generator_UserTableName="DataTable2" msprop:Generator_RowEvArgName="DataTable2RowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="subject_code" msprop:Generator_ColumnVarNameInTable="columnsubject_code" msprop:Generator_ColumnPropNameInRow="subject_code" msprop:Generator_ColumnPropNameInTable="subject_codeColumn" msprop:Generator_UserColumnName="subject_code" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="subject" msprop:Generator_ColumnVarNameInTable="columnsubject" msprop:Generator_ColumnPropNameInRow="subject" msprop:Generator_ColumnPropNameInTable="subjectColumn" msprop:Generator_UserColumnName="subject" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="max_mark" msprop:Generator_ColumnVarNameInTable="columnmax_mark" msprop:Generator_ColumnPropNameInRow="max_mark" msprop:Generator_ColumnPropNameInTable="max_markColumn" msprop:Generator_UserColumnName="max_mark" type="xs:decimal" minOccurs="0" />
+              <xs:element name="mark" msprop:Generator_ColumnVarNameInTable="columnmark" msprop:Generator_ColumnPropNameInRow="mark" msprop:Generator_ColumnPropNameInTable="markColumn" msprop:Generator_UserColumnName="mark" type="xs:decimal" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="DataTable1" msprop:Generator_TableClassName="DataTable1DataTable" msprop:Generator_TableVarName="tableDataTable1" msprop:Generator_RowChangedName="DataTable1RowChanged" msprop:Generator_TablePropName="DataTable1" msprop:Generator_RowDeletingName="DataTable1RowDeleting" msprop:Generator_RowChangingName="DataTable1RowChanging" msprop:Generator_RowEvHandlerName="DataTable1RowChangeEventHandler" msprop:Generator_RowDeletedName="DataTable1RowDeleted" msprop:Generator_RowClassName="DataTable1Row" msprop:Generator_UserTableName="DataTable1" msprop:Generator_RowEvArgName="DataTable1RowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="student_id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnstudent_id" msprop:Generator_ColumnPropNameInRow="student_id" msprop:Generator_ColumnPropNameInTable="student_idColumn" msprop:Generator_UserColumnName="student_id" type="xs:int" />
+              <xs:element name="student_name" msprop:Generator_ColumnVarNameInTable="columnstudent_name" msprop:Generator_ColumnPropNameInRow="student_name" msprop:Generator_ColumnPropNameInTable="student_nameColumn" msprop:Generator_UserColumnName="student_name" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="semester" msprop:Generator_ColumnVarNameInTable="columnsemester" msprop:Generator_ColumnPropNameInRow="semester" msprop:Generator_ColumnPropNameInTable="semesterColumn" msprop:Generator_UserColumnName="semester" type="xs:decimal" minOccurs="0" />
+              <xs:element name="roll_no" msprop:Generator_ColumnVarNameInTable="columnroll_no" msprop:Generator_ColumnPropNameInRow="roll_no" msprop:Generator_ColumnPropNameInTable="roll_noColumn" msprop:Generator_UserColumnName="roll_no" type="xs:decimal" minOccurs="0" />
+              <xs:element name="internal_id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columninternal_id" msprop:Generator_ColumnPropNameInRow="internal_id" msprop:Generator_ColumnPropNameInTable="internal_idColumn" msprop:Generator_UserColumnName="internal_id" type="xs:int" />
+              <xs:element name="subject_id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnsubject_id" msprop:Generator_ColumnPropNameInRow="subject_id" msprop:Generator_ColumnPropNameInTable="subject_idColumn" msprop:Generator_UserColumnName="subject_id" type="xs:int" />
+              <xs:element name="subject_code" msprop:Generator_ColumnVarNameInTable="columnsubject_code" msprop:Generator_ColumnPropNameInRow="subject_code" msprop:Generator_ColumnPropNameInTable="subject_codeColumn" msprop:Generator_UserColumnName="subject_code" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="subject" msprop:Generator_ColumnVarNameInTable="columnsubject" msprop:Generator_ColumnPropNameInRow="subject" msprop:Generator_ColumnPropNameInTable="subjectColumn" msprop:Generator_UserColumnName="subject" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="exam_id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnexam_id" msprop:Generator_ColumnPropNameInRow="exam_id" msprop:Generator_ColumnPropNameInTable="exam_idColumn" msprop:Generator_UserColumnName="exam_id" type="xs:int" />
+              <xs:element name="max_mark" msprop:Generator_ColumnVarNameInTable="columnmax_mark" msprop:Generator_ColumnPropNameInRow="max_mark" msprop:Generator_ColumnPropNameInTable="max_markColumn" msprop:Generator_UserColumnName="max_mark" type="xs:decimal" minOccurs="0" />
+              <xs:element name="mark" msprop:Generator_ColumnVarNameInTable="columnmark" msprop:Generator_ColumnPropNameInRow="mark" msprop:Generator_ColumnPropNameInTable="markColumn" msprop:Generator_UserColumnName="mark" type="xs:decimal" minOccurs="0" />
+              <xs:element name="exam_name" msprop:Generator_ColumnVarNameInTable="columnexam_name" msprop:Generator_ColumnPropNameInRow="exam_name" msprop:Generator_ColumnPropNameInTable="exam_nameColumn" msprop:Generator_UserColumnName="exam_name" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="new_x0020_table" msprop:Generator_TableClassName="new_tableDataTable" msprop:Generator_TableVarName="tablenew_table" msprop:Generator_TablePropName="new_table" msprop:Generator_RowDeletingName="new_tableRowDeleting" msprop:Generator_RowChangingName="new_tableRowChanging" msprop:Generator_RowEvHandlerName="new_tableRowChangeEventHandler" msprop:Generator_RowDeletedName="new_tableRowDeleted" msprop:Generator_UserTableName="new table" msprop:Generator_RowChangedName="new_tableRowChanged" msprop:Generator_RowEvArgName="new_tableRowChangeEvent" msprop:Generator_RowClassName="new_tableRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="batch_id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnbatch_id" msprop:Generator_ColumnPropNameInRow="batch_id" msprop:Generator_ColumnPropNameInTable="batch_idColumn" msprop:Generator_UserColumnName="batch_id" type="xs:int" />
+              <xs:element name="batch_name" msprop:Generator_ColumnVarNameInTable="columnbatch_name" msprop:Generator_ColumnPropNameInRow="batch_name" msprop:Generator_ColumnPropNameInTable="batch_nameColumn" msprop:Generator_UserColumnName="batch_name" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="student_id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnstudent_id" msprop:Generator_ColumnPropNameInRow="student_id" msprop:Generator_ColumnPropNameInTable="student_idColumn" msprop:Generator_UserColumnName="student_id" type="xs:int" />
+              <xs:element name="student_name" msprop:Generator_ColumnVarNameInTable="columnstudent_name" msprop:Generator_ColumnPropNameInRow="student_name" msprop:Generator_ColumnPropNameInTable="student_nameColumn" msprop:Generator_UserColumnName="student_name" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="semester" msprop:Generator_ColumnVarNameInTable="columnsemester" msprop:Generator_ColumnPropNameInRow="semester" msprop:Generator_ColumnPropNameInTable="semesterColumn" msprop:Generator_UserColumnName="semester" type="xs:decimal" minOccurs="0" />
+              <xs:element name="roll_no" msprop:Generator_ColumnVarNameInTable="columnroll_no" msprop:Generator_ColumnPropNameInRow="roll_no" msprop:Generator_ColumnPropNameInTable="roll_noColumn" msprop:Generator_UserColumnName="roll_no" type="xs:decimal" minOccurs="0" />
+              <xs:element name="internal_id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columninternal_id" msprop:Generator_ColumnPropNameInRow="internal_id" msprop:Generator_ColumnPropNameInTable="internal_idColumn" msprop:Generator_UserColumnName="internal_id" type="xs:int" />
+              <xs:element name="subject_id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnsubject_id" msprop:Generator_ColumnPropNameInRow="subject_id" msprop:Generator_ColumnPropNameInTable="subject_idColumn" msprop:Generator_UserColumnName="subject_id" type="xs:int" />
+              <xs:element name="subject_code" msprop:Generator_ColumnVarNameInTable="columnsubject_code" msprop:Generator_ColumnPropNameInRow="subject_code" msprop:Generator_ColumnPropNameInTable="subject_codeColumn" msprop:Generator_UserColumnName="subject_code" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="subject" msprop:Generator_ColumnVarNameInTable="columnsubject" msprop:Generator_ColumnPropNameInRow="subject" msprop:Generator_ColumnPropNameInTable="subjectColumn" msprop:Generator_UserColumnName="subject" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="exam_id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnexam_id" msprop:Generator_ColumnPropNameInRow="exam_id" msprop:Generator_ColumnPropNameInTable="exam_idColumn" msprop:Generator_UserColumnName="exam_id" type="xs:int" />
+              <xs:element name="max_mark" msprop:Generator_ColumnVarNameInTable="columnmax_mark" msprop:Generator_ColumnPropNameInRow="max_mark" msprop:Generator_ColumnPropNameInTable="max_markColumn" msprop:Generator_UserColumnName="max_mark" type="xs:decimal" minOccurs="0" />
+              <xs:element name="mark" msprop:Generator_ColumnVarNameInTable="columnmark" msprop:Generator_ColumnPropNameInRow="mark" msprop:Generator_ColumnPropNameInTable="markColumn" msprop:Generator_UserColumnName="mark" type="xs:decimal" minOccurs="0" />
+              <xs:element name="exam_name" msprop:Generator_ColumnVarNameInTable="columnexam_name" msprop:Generator_ColumnPropNameInRow="exam_name" msprop:Generator_ColumnPropNameInTable="exam_nameColumn" msprop:Generator_UserColumnName="exam_name" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="attendence" msprop:Generator_ColumnVarNameInTable="columnattendence" msprop:Generator_ColumnPropNameInRow="attendence" msprop:Generator_ColumnPropNameInTable="attendenceColumn" msprop:Generator_UserColumnName="attendence" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:MarksTable" />
+      <xs:field xpath="mstns:student_id" />
+      <xs:field xpath="mstns:internal_id" />
+      <xs:field xpath="mstns:subject_id" />
+      <xs:field xpath="mstns:exam_id" />
+    </xs:unique>
+    <xs:unique name="DataTable1_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:DataTable1" />
+      <xs:field xpath="mstns:student_id" />
+      <xs:field xpath="mstns:internal_id" />
+      <xs:field xpath="mstns:subject_id" />
+      <xs:field xpath="mstns:exam_id" />
+    </xs:unique>
+    <xs:unique name="new_x0020_table_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:new_x0020_table" />
+      <xs:field xpath="mstns:batch_id" />
+      <xs:field xpath="mstns:student_id" />
+      <xs:field xpath="mstns:internal_id" />
+      <xs:field xpath="mstns:subject_id" />
+      <xs:field xpath="mstns:exam_id" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

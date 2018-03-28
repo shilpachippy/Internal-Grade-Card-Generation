@@ -27,7 +27,7 @@ namespace sample_internal
         {
             SqlConnection con = new SqlConnection("Data Source=.\\sqlexpress;Initial Catalog=college_management;User ID=sa;Password=admin42");
             con.Open();
-            SqlCommand cmd = new SqlCommand("select * from tbl_department ", con);     //starting code of Department dropdown
+            SqlCommand cmd = new SqlCommand("select * from tbl_department where active=1 ", con);     //starting code of Department dropdown
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
             da.Fill(dt);
@@ -43,7 +43,7 @@ namespace sample_internal
         {
             SqlConnection con = new SqlConnection("Data Source=.\\sqlexpress;Initial Catalog=college_management;User ID=sa;Password=admin42");
             con.Open();
-            SqlCommand cmd = new SqlCommand("select * from tbl_course where dept_id='" + ddl_dept.SelectedItem.Value + "'", con);
+            SqlCommand cmd = new SqlCommand("select * from tbl_course where dept_id='" + ddl_dept.SelectedItem.Value + "' and active=1" , con);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
 
             DataTable dt = new DataTable();
@@ -62,7 +62,7 @@ namespace sample_internal
 
             SqlConnection con = new SqlConnection("Data Source=.\\sqlexpress;Initial Catalog=college_management;User ID=sa;Password=admin42");
             con.Open();
-            SqlCommand cmd = new SqlCommand("SELECT tbl_department.dept_name as Department, tbl_course.course_name as Course,tbl_batch.batch_name as Batch FROM tbl_department,tbl_course,tbl_batch WHERE  tbl_department.dept_id=tbl_course.dept_id and tbl_course.course_id=tbl_batch.course_id order by tbl_department.dept_name , tbl_course.course_name ,tbl_batch.batch_name", con);
+            SqlCommand cmd = new SqlCommand("SELECT tbl_department.dept_name as Department, tbl_course.course_name as Course,tbl_batch.batch_name as Batch FROM tbl_department,tbl_course,tbl_batch WHERE tbl_batch.active=1 and  tbl_department.dept_id=tbl_course.dept_id and tbl_course.course_id=tbl_batch.course_id order by tbl_department.dept_name , tbl_course.course_name ,tbl_batch.batch_name", con);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
             da.Fill(dt);
@@ -73,9 +73,15 @@ namespace sample_internal
 
         protected void btn_add_Click(object sender, EventArgs e)
         {
+            
             SqlConnection con = new SqlConnection("Data Source=.\\sqlexpress;Initial Catalog=college_management;User ID=sa;Password=admin42");
             con.Open();
-            SqlCommand cmd = new SqlCommand("select * from tbl_batch where course_id='" + ddl_course.SelectedItem.Value + "' and batch_name='" + txt_batch.Text + "' ", con);
+
+            //if(ddl_dept.SelectedIndex==1)
+            //{
+
+            //}
+            SqlCommand cmd = new SqlCommand("select * from tbl_batch where course_id='" + ddl_course.SelectedItem.Value + "' and batch_name='" + txt_batch.Text + "' and active=1 ", con);
             cmd.ExecuteNonQuery();
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
@@ -88,7 +94,7 @@ namespace sample_internal
             else
             {
 
-                string sql = "insert into [tbl_batch] (batch_name,course_id) values('" + txt_batch.Text + "','" + ddl_course.SelectedItem.Value + "')";
+                string sql = "insert into [tbl_batch] (batch_name,course_id,active) values('" + txt_batch.Text + "','" + ddl_course.SelectedItem.Value + "',1)";
                 SqlCommand cmd2 = new SqlCommand(sql, con);
                 cmd2.ExecuteNonQuery();
                 
@@ -100,6 +106,7 @@ namespace sample_internal
 
         protected void ddl_dept_SelectedIndexChanged(object sender, EventArgs e)
         {
+            ddl_course.Visible = true;
             view_course_dropdown();
         }
 

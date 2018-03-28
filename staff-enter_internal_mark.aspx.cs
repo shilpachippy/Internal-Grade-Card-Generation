@@ -107,8 +107,8 @@ namespace sample_internal
             DataTable dt = new DataTable();
             da.Fill(dt);
             ddl_subject_code.DataSource = dt;
-            dt.DefaultView.Sort = "course_no";
-            ddl_subject_code.DataTextField = "course_no";
+            dt.DefaultView.Sort = "subject_code";
+            ddl_subject_code.DataTextField = "subject_code";
             ddl_subject_code.DataValueField = "subject_id";
             ddl_subject_code.DataBind();
             ddl_subject_code.Items.Insert(0, new ListItem("--Select Subject Code-", "0"));
@@ -197,6 +197,7 @@ namespace sample_internal
             txt_mark.Text = "";
             view_subject_code_dropdown();
             txt_roll_no.Text = "";
+           
         }
 
         protected void ddl_dept_SelectedIndexChanged(object sender, EventArgs e)

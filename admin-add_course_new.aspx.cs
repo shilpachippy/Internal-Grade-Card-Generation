@@ -13,6 +13,7 @@ namespace sample_internal
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+           
             if (!IsPostBack)
             {
 
@@ -27,7 +28,7 @@ namespace sample_internal
         {
             SqlConnection con = new SqlConnection("Data Source=.\\sqlexpress;Initial Catalog=college_management;User ID=sa;Password=admin42");
             con.Open();
-            SqlCommand cmd = new SqlCommand("select * from tbl_department ", con);     //starting code of Department dropdown
+            SqlCommand cmd = new SqlCommand("select * from tbl_department where active=1", con);     //starting code of Department dropdown
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
             da.Fill(dt);
@@ -36,7 +37,7 @@ namespace sample_internal
             DropDownList1.DataTextField = "dept_name"; //to display department name
             DropDownList1.DataValueField = "dept_id";
             DropDownList1.DataBind();
-            DropDownList1.Items.Insert(0, new ListItem("--Select Department-", "0"));
+           DropDownList1.Items.Insert(0, new ListItem("--Select Department-", "0"));
 
         }
         public void viewgrid() //course grid function 
@@ -44,7 +45,7 @@ namespace sample_internal
 
             SqlConnection con = new SqlConnection("Data Source=.\\sqlexpress;Initial Catalog=college_management;User ID=sa;Password=admin42");
             con.Open();
-            SqlCommand cmd = new SqlCommand("SELECT tbl_department.dept_name as Department, tbl_course.course_name as Course FROM tbl_department,tbl_course WHERE  tbl_department.dept_id=tbl_course.dept_id order by tbl_department.dept_name,tbl_course.course_name", con);
+            SqlCommand cmd = new SqlCommand("SELECT tbl_department.dept_name as Department, tbl_course.course_name as Course FROM tbl_department,tbl_course WHERE tbl_course.active=1 and  tbl_department.dept_id=tbl_course.dept_id order by tbl_department.dept_name,tbl_course.course_name", con);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
             da.Fill(dt);
@@ -62,7 +63,7 @@ namespace sample_internal
         {
             SqlConnection con = new SqlConnection("Data Source=.\\sqlexpress;Initial Catalog=college_management;User ID=sa;Password=admin42");
             con.Open();
-            SqlCommand cmd = new SqlCommand("select * from tbl_course where dept_id='" + DropDownList1.SelectedItem.Value + "' and course_name='" + txt_c.Text + "' ", con);
+            SqlCommand cmd = new SqlCommand("select * from tbl_course where dept_id='" + DropDownList1.SelectedItem.Value + "' and course_name='" + txt_c.Text + "' and active=1 ", con);
             cmd.ExecuteNonQuery();
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
@@ -74,8 +75,7 @@ namespace sample_internal
             }
             else
             {
-
-                string sql = "insert into [tbl_course] (dept_id,course_name) values('" + DropDownList1.SelectedItem.Value + "','" + txt_c.Text+ "')";
+                string sql = "insert into [tbl_course] (dept_id,course_name,active) values('" + DropDownList1.SelectedItem.Value + "','" + txt_c.Text+ "',1)";
                 SqlCommand cmd2 = new SqlCommand(sql, con);
                 cmd2.ExecuteNonQuery();
                 
@@ -85,9 +85,25 @@ namespace sample_internal
 
         }
 
+      
+
+       
+
         protected void LinkButton1_Click(object sender, EventArgs e)
         {
             GridView2.Visible = true;
+        }
+
+        protected void DropDownList1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Label2.Visible = true;
+            txt_c.Visible = true;
+           
+        }
+
+        protected void btn_clear_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }

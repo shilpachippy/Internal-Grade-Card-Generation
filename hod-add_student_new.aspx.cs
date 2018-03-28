@@ -100,7 +100,7 @@ namespace sample_internal
             else
             {
                
-                String sql = "insert into [tbl_student] (batch_id,admission_no,admission_year,roll_vo,student_name,gender,dob,address,phone,email,active) values('" + ddl_batch.SelectedItem.Value + "','" + txt_adm_no.Text + "','" + txt_adm_year.Text + "' ,'" + txt_roll_no.Text + "','" + txt_name.Text + "','" + rbl_gender.SelectedItem.Text + "','" + txt_dob.Text + "','" + txt_address.Text.Trim() + "','" + txt_phone.Text.Trim() + "','" + txt_email.Text + "',1)";
+                String sql = "insert into [tbl_student] (batch_id,admission_no,admission_year,roll_no,student_name,gender,dob,address,phone,email,active) values('" + ddl_batch.SelectedItem.Value + "','" + txt_adm_no.Text + "','" + txt_adm_year.Text + "' ,'" + txt_roll_no.Text + "','" + txt_name.Text + "','" + rbl_gender.SelectedItem.Text + "','" + txt_dob.Text + "','" + txt_address.Text.Trim() + "','" + txt_phone.Text.Trim() + "','" + txt_email.Text + "',1)";
                 SqlCommand name = new SqlCommand(sql, con);
                 name.ExecuteNonQuery();
                 Response.Write("<script  >alert('Succesfully Registered')</script>");

@@ -68,11 +68,11 @@
             <td>&nbsp;</td>
         </tr>
         <tr>
-            <td class="auto-style1">&nbsp;</td>
-            <td class="auto-style2">&nbsp;</td>
-            <td colspan="2">&nbsp;STUDENT REGISTRATION &nbsp;FORM</td>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
+            <td class="auto-style6"></td>
+            <td class="auto-style7"></td>
+            <td colspan="2" class="auto-style11">&nbsp;STUDENT REGISTRATION &nbsp;FORM</td>
+            <td class="auto-style11"></td>
+            <td class="auto-style11"></td>
         </tr>
         <tr>
             <td class="auto-style1">&nbsp;</td>

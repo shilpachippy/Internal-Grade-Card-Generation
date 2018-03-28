@@ -107,12 +107,14 @@
     <tr>
         <td class="auto-style1">&nbsp;</td>
         <td class="auto-style14">
-                    <asp:Label ID="Label4" runat="server" Text="Add Batch"></asp:Label>
+                    <asp:Label ID="Label4" runat="server" Text="Enter batch name"></asp:Label>
                 </td>
         <td class="auto-style17">
                     <asp:TextBox ID="txt_batch" runat="server"></asp:TextBox>
                 </td>
-        <td class="auto-style7">&nbsp;</td>
+        <td class="auto-style7">
+            <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txt_batch" ErrorMessage="*Please enter  batch name" ForeColor="#CC0000"></asp:RequiredFieldValidator>
+        </td>
         <td class="auto-style6">&nbsp;</td>
     </tr>
     <tr>
@@ -133,6 +135,14 @@
                     <asp:Button ID="Button2" runat="server" Text="Cancel" OnClick="Button2_Click" Height="26px" />
                 </td>
         <td class="auto-style7">&nbsp;</td>
+        <td class="auto-style6">&nbsp;</td>
+    </tr>
+    <tr>
+        <td class="auto-style1">&nbsp;</td>
+        <td class="auto-style14" colspan="2">
+                    &nbsp;</td>
+        <td class="auto-style7">
+                    &nbsp;</td>
         <td class="auto-style6">&nbsp;</td>
     </tr>
     <tr>

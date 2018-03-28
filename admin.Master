@@ -228,7 +228,13 @@
                           <span>Attendance</span>
                       </a>
                       <ul class="sub">
+                          <li><a  href="admin-home.aspx">Home</a></li>
+                          
+                                          
+                      </ul>
+                      <ul class="sub">
                           <li><a  href="admin-add_dept_new.aspx">Manage Departments</a></li>
+                          
                                           
                       </ul>
                        <ul class="sub">
@@ -246,7 +252,7 @@
                           <li><a  href="admin-add_subject_new.aspx">Manage Subjects</a></li>
                  </ul>
                       <ul class="sub">
-                          <li><a  href="admin-add_staff_reg_new.aspx">Manage Subjects</a></li>
+                          <li><a  href="admin-staff_reg_new.aspx">Manage Staff</a></li>
                  </ul>
                   </li>
 

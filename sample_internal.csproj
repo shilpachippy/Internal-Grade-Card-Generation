@@ -39,6 +39,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.ReportViewer.WebForms, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -101,7 +102,8 @@
     <Content Include="Fancybox\Thumbs.db" />
     <Content Include="hod-add_staff_advisor.aspx" />
     <Content Include="hod-home_page.aspx" />
-    <Content Include="Login.aspx" />
+    <Content Include="hod-upload_student.aspx" />
+    <Content Include="my_login.aspx" />
     <Content Include="noty-2.1.0\js\noty\jquery.noty.js" />
     <Content Include="noty-2.1.0\js\noty\layouts\bottom.js" />
     <Content Include="noty-2.1.0\js\noty\layouts\bottomCenter.js" />
@@ -117,7 +119,7 @@
     <Content Include="noty-2.1.0\js\noty\layouts\topRight.js" />
     <Content Include="noty-2.1.0\js\noty\promise.js" />
     <Content Include="noty-2.1.0\js\noty\themes\default.js" />
-    <Content Include="scheme_add_new.aspx" />
+    <Content Include="report.aspx" />
     <Content Include="Site1.Master" />
     <Content Include="CampusMaster.Master" />
     <Content Include="staff-enter_internal_mark.aspx" />
@@ -126,11 +128,36 @@
     <Content Include="staff-home.aspx" />
     <Content Include="admin-staff_reg_new.aspx" />
     <Content Include="TestExcel.aspx" />
-    <Content Include="WebForm1.aspx" />
     <Content Include="admin.Master" />
     <Content Include="hod.master" />
     <Content Include="staff_advisor.Master" />
     <Content Include="staff.Master" />
+    <Content Include="testpdf.aspx" />
+    <Content Include="TestReports.aspx" />
+    <Content Include="WebForm2.aspx" />
+    <Content Include="TestData.xsc">
+      <DependentUpon>TestData.xsd</DependentUpon>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="sample_internal_dbDataSet.xsc">
+      <DependentUpon>sample_internal_dbDataSet.xsd</DependentUpon>
+    </Content>
+    <None Include="sample_internal_dbDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>sample_internal_dbDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="sample_internal_dbDataSet.xss">
+      <DependentUpon>sample_internal_dbDataSet.xsd</DependentUpon>
+    </Content>
+    <None Include="TestData.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>TestData.Designer.cs</LastGenOutput>
+    </None>
+    <Content Include="TestData.xss">
+      <DependentUpon>TestData.xsd</DependentUpon>
+    </Content>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -257,7 +284,6 @@
     <Content Include="images\images.jpg" />
     <Content Include="images\password_icon.png" />
     <Content Include="images\username_icon.png" />
-    <Content Include="stud_reg.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -333,6 +359,13 @@
     <Compile Include="hod-add_staff_advisor.aspx.designer.cs">
       <DependentUpon>hod-add_staff_advisor.aspx</DependentUpon>
     </Compile>
+    <Compile Include="hod-upload_student.aspx.cs">
+      <DependentUpon>hod-upload_student.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="hod-upload_student.aspx.designer.cs">
+      <DependentUpon>hod-upload_student.aspx</DependentUpon>
+    </Compile>
     <Compile Include="hod.master.cs">
       <DependentUpon>hod.master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -347,20 +380,25 @@
     <Compile Include="hod-home_page.aspx.designer.cs">
       <DependentUpon>hod-home_page.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Login.aspx.cs">
-      <DependentUpon>Login.aspx</DependentUpon>
+    <Compile Include="my_login.aspx.cs">
+      <DependentUpon>my_login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Login.aspx.designer.cs">
-      <DependentUpon>Login.aspx</DependentUpon>
+    <Compile Include="my_login.aspx.designer.cs">
+      <DependentUpon>my_login.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="scheme_add_new.aspx.cs">
-      <DependentUpon>scheme_add_new.aspx</DependentUpon>
+    <Compile Include="report.aspx.cs">
+      <DependentUpon>report.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="scheme_add_new.aspx.designer.cs">
-      <DependentUpon>scheme_add_new.aspx</DependentUpon>
+    <Compile Include="report.aspx.designer.cs">
+      <DependentUpon>report.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="sample_internal_dbDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>sample_internal_dbDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="Site1.Master.cs">
       <DependentUpon>Site1.Master</DependentUpon>
@@ -418,12 +456,10 @@
     <Compile Include="admin-staff_reg_new.aspx.designer.cs">
       <DependentUpon>admin-staff_reg_new.aspx</DependentUpon>
     </Compile>
-    <Compile Include="stud_reg.aspx.cs">
-      <DependentUpon>stud_reg.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="stud_reg.aspx.designer.cs">
-      <DependentUpon>stud_reg.aspx</DependentUpon>
+    <Compile Include="TestData.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TestData.xsd</DependentUpon>
     </Compile>
     <Compile Include="TestExcel.aspx.cs">
       <DependentUpon>TestExcel.aspx</DependentUpon>
@@ -432,13 +468,31 @@
     <Compile Include="TestExcel.aspx.designer.cs">
       <DependentUpon>TestExcel.aspx</DependentUpon>
     </Compile>
-    <Compile Include="WebForm1.aspx.cs">
-      <DependentUpon>WebForm1.aspx</DependentUpon>
+    <Compile Include="testpdf.aspx.cs">
+      <DependentUpon>testpdf.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="WebForm1.aspx.designer.cs">
-      <DependentUpon>WebForm1.aspx</DependentUpon>
+    <Compile Include="testpdf.aspx.designer.cs">
+      <DependentUpon>testpdf.aspx</DependentUpon>
     </Compile>
+    <Compile Include="TestReports.aspx.cs">
+      <DependentUpon>TestReports.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TestReports.aspx.designer.cs">
+      <DependentUpon>TestReports.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForm2.aspx.cs">
+      <DependentUpon>WebForm2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm2.aspx.designer.cs">
+      <DependentUpon>WebForm2.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="GradeCard.rdlc" />
+    <EmbeddedResource Include="TestRpt.rdlc" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -2,27 +2,27 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
     <style type="text/css">
     .auto-style1 {
-        width: 329px;
-    }
+            width: 484px;
+        }
     .auto-style2 {
     }
     .auto-style6 {
-        width: 329px;
+        width: 484px;
         height: 24px;
     }
     .auto-style7 {
-        width: 121px;
+        width: 191px;
         height: 24px;
     }
     .auto-style8 {
         height: 24px;
     }
     .auto-style10 {
-        width: 329px;
+        width: 484px;
         height: 20px;
     }
     .auto-style11 {
-        width: 121px;
+        width: 191px;
         height: 20px;
     }
     .auto-style12 {
@@ -46,7 +46,7 @@
         text-decoration: underline;
     }
     .auto-style18 {
-        width: 329px;
+        width: 484px;
         height: 40px;
     }
     .auto-style19 {
@@ -57,37 +57,44 @@
         height: 28px;
     }
     .auto-style23 {
-        width: 329px;
+        width: 484px;
         height: 28px;
     }
     .auto-style24 {
         height: 28px;
     }
-</style>
+        .auto-style25 {
+            width: 191px;
+        }
+        .auto-style26 {
+            height: 28px;
+            width: 191px;
+        }
+    </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <table class="nav-justified">
     <tr>
         <td class="auto-style1">&nbsp;</td>
-        <td class="auto-style2">&nbsp;</td>
+        <td class="auto-style25">&nbsp;</td>
         <td class="auto-style13">&nbsp;</td>
         <td>&nbsp;</td>
     </tr>
     <tr>
         <td class="auto-style1">&nbsp;</td>
-        <td class="auto-style2">&nbsp;</td>
+        <td class="auto-style25">&nbsp;</td>
         <td class="auto-style13">&nbsp;</td>
         <td>&nbsp;</td>
     </tr>
     <tr>
         <td class="auto-style1">&nbsp;</td>
-        <td class="auto-style2">&nbsp;</td>
+        <td class="auto-style25">&nbsp;</td>
         <td class="auto-style13">&nbsp;</td>
         <td>&nbsp;</td>
     </tr>
     <tr>
         <td class="auto-style1">&nbsp;</td>
-        <td class="auto-style2">&nbsp;</td>
+        <td class="auto-style25">&nbsp;</td>
         <td class="auto-style13">&nbsp;</td>
         <td>&nbsp;</td>
     </tr>
@@ -111,23 +118,25 @@
     </tr>
     <tr>
         <td class="auto-style1">&nbsp;</td>
-        <td class="auto-style2">
-                    <asp:Label ID="Label2" runat="server" Text="Add Designation"></asp:Label>
+        <td class="auto-style25">
+                    <asp:Label ID="Label2" runat="server" Text="Enter new faculty designation"></asp:Label>
                 </td>
         <td class="auto-style13">
                     <asp:TextBox ID="txt_faculty_type" runat="server"></asp:TextBox>
                 </td>
-        <td>&nbsp;</td>
+        <td>
+            <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txt_faculty_type" ErrorMessage="*Please enter  faculty designation" ForeColor="#CC0000"></asp:RequiredFieldValidator>
+        </td>
     </tr>
     <tr>
         <td class="auto-style1">&nbsp;</td>
-        <td class="auto-style2">&nbsp;</td>
+        <td class="auto-style25">&nbsp;</td>
         <td class="auto-style13">&nbsp;</td>
         <td>&nbsp;</td>
     </tr>
     <tr>
         <td class="auto-style1">&nbsp;</td>
-        <td class="auto-style2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;<asp:Button ID="btn_add" runat="server" OnClick="btn_add_Click" Text="Add" />
+        <td class="auto-style25">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;<asp:Button ID="btn_add" runat="server" OnClick="btn_add_Click" Text="Add" />
                 </td>
         <td class="auto-style13">
                     <asp:Button ID="btn_clear" runat="server" OnClick="btn_clear_Click" Text="Clear" />
@@ -145,7 +154,7 @@
     </tr>
     <tr>
         <td class="auto-style23"></td>
-        <td class="auto-style24"></td>
+        <td class="auto-style26"></td>
         <td class="auto-style22"></td>
         <td class="auto-style24">
             <asp:GridView ID="GridView2" runat="server" Visible="False">
@@ -154,73 +163,73 @@
     </tr>
     <tr>
         <td class="auto-style1">&nbsp;</td>
-        <td class="auto-style2">&nbsp;</td>
+        <td class="auto-style25">&nbsp;</td>
         <td class="auto-style13">&nbsp;</td>
         <td>&nbsp;</td>
     </tr>
     <tr>
         <td class="auto-style1">&nbsp;</td>
-        <td class="auto-style2">&nbsp;</td>
+        <td class="auto-style25">&nbsp;</td>
         <td class="auto-style13">&nbsp;</td>
         <td>&nbsp;</td>
     </tr>
     <tr>
         <td class="auto-style1">&nbsp;</td>
-        <td class="auto-style2">&nbsp;</td>
+        <td class="auto-style25">&nbsp;</td>
         <td class="auto-style13">&nbsp;</td>
         <td>&nbsp;</td>
     </tr>
     <tr>
         <td class="auto-style1">&nbsp;</td>
-        <td class="auto-style2">&nbsp;</td>
+        <td class="auto-style25">&nbsp;</td>
         <td class="auto-style13">&nbsp;</td>
         <td>&nbsp;</td>
     </tr>
     <tr>
         <td class="auto-style1">&nbsp;</td>
-        <td class="auto-style2">&nbsp;</td>
+        <td class="auto-style25">&nbsp;</td>
         <td class="auto-style13">&nbsp;</td>
         <td>&nbsp;</td>
     </tr>
     <tr>
         <td class="auto-style1">&nbsp;</td>
-        <td class="auto-style2">&nbsp;</td>
+        <td class="auto-style25">&nbsp;</td>
         <td class="auto-style13">&nbsp;</td>
         <td>&nbsp;</td>
     </tr>
     <tr>
         <td class="auto-style1">&nbsp;</td>
-        <td class="auto-style2">&nbsp;</td>
+        <td class="auto-style25">&nbsp;</td>
         <td class="auto-style13">&nbsp;</td>
         <td>&nbsp;</td>
     </tr>
     <tr>
         <td class="auto-style1">&nbsp;</td>
-        <td class="auto-style2">&nbsp;</td>
+        <td class="auto-style25">&nbsp;</td>
         <td class="auto-style13">&nbsp;</td>
         <td>&nbsp;</td>
     </tr>
     <tr>
         <td class="auto-style1">&nbsp;</td>
-        <td class="auto-style2">&nbsp;</td>
+        <td class="auto-style25">&nbsp;</td>
         <td class="auto-style13">&nbsp;</td>
         <td>&nbsp;</td>
     </tr>
     <tr>
         <td class="auto-style1">&nbsp;</td>
-        <td class="auto-style2">&nbsp;</td>
+        <td class="auto-style25">&nbsp;</td>
         <td class="auto-style13">&nbsp;</td>
         <td>&nbsp;</td>
     </tr>
     <tr>
         <td class="auto-style1">&nbsp;</td>
-        <td class="auto-style2">&nbsp;</td>
+        <td class="auto-style25">&nbsp;</td>
         <td class="auto-style13">&nbsp;</td>
         <td>&nbsp;</td>
     </tr>
     <tr>
         <td class="auto-style1">&nbsp;</td>
-        <td class="auto-style2">&nbsp;</td>
+        <td class="auto-style25">&nbsp;</td>
         <td class="auto-style13">&nbsp;</td>
         <td>&nbsp;</td>
     </tr>

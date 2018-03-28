@@ -19,7 +19,7 @@ namespace sample_internal
 
             }
             ddl_course.Items.Insert(0, new ListItem("--Select Course--", "0"));
-            ddl_scheme.Items.Insert(0, new ListItem("--Select Scheme--", "0"));
+           
             ddl_batchid.Items.Insert(0, new ListItem("--Select batch--", "0"));
             
         }
@@ -57,30 +57,13 @@ namespace sample_internal
             ddl_course.DataBind();
             ddl_course.Items.Insert(0, new ListItem("--Select Course--", "0"));
         }
-        public void view_scheme_dropdown()
-        {
-            SqlConnection con = new SqlConnection("Data Source=.\\sqlexpress;Initial Catalog=college_management;User ID=sa;Password=admin42");
-            con.Open();
-            SqlCommand cmd = new SqlCommand("select * from tbl_scheme where course_id='" + ddl_course.SelectedItem.Value + "'", con);
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
-
-            DataTable dt = new DataTable();
-            da.Fill(dt);
-            ddl_scheme.DataSource = dt;
-            
-            dt.DefaultView.Sort = "scheme_name";  //to sort dropdown values
-            ddl_scheme.DataTextField = "scheme_name"; //to display department name
-            ddl_scheme.DataValueField = "scheme_id";
-            ddl_scheme.DataBind();
-            ddl_scheme.Items.Insert(0, new ListItem("--Select Scheme--", "0"));
-        }
-
+       
         public void view_batch_dropdown()
         {
 
             SqlConnection con = new SqlConnection("Data Source=.\\sqlexpress;Initial Catalog=college_management;User ID=sa;Password=admin42");
             con.Open();
-            SqlCommand cmd = new SqlCommand("select * from tbl_batch where scheme_id='" + ddl_scheme.SelectedItem.Value + "'", con);
+            SqlCommand cmd = new SqlCommand("select * from tbl_batch where course_id='" + ddl_course.SelectedItem.Value + "'", con);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
 
             DataTable dt = new DataTable();
@@ -106,7 +89,7 @@ namespace sample_internal
         {
             SqlConnection con = new SqlConnection("Data Source=.\\sqlexpress;Initial Catalog=college_management;User ID=sa;Password=admin42");
             con.Open();
-            SqlCommand cmd = new SqlCommand("select * from tbl_subject_new where semester='" + ddl_semid.SelectedItem.Value + "' and subject='" + txtsubject.Text + "' ", con);
+            SqlCommand cmd = new SqlCommand("select * from tbl_subject_new where sem='" + ddl_semid.SelectedItem.Text + "' and subject='" + txtsubject.Text + "' ", con);
             cmd.ExecuteNonQuery();
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
@@ -119,7 +102,7 @@ namespace sample_internal
             else
             {
 
-                string sql = "insert into [tbl_subject_new] (semester,slot,course_no,subject,IA_mark,ESE_mark,total,credits,batch_id,active) values('" + ddl_semid.SelectedItem.Text + "','" + txtslot.Text.Trim() + "','" + txtcourseno.Text.Trim() + "','" + txtsubject.Text.Trim() + "','" + txtiamark.Text.Trim() + "','" + txtexemark.Text.Trim() + "','" + txttotal.Text.Trim() + "','" + txtcredit.Text.Trim() + "','" + ddl_batchid.SelectedItem.Value + "',1)";
+                string sql = "insert into [tbl_subject_new] (slot,subject_code,subject,IA_mark,ESE_mark,total,credits,batch_id,sem,active) values('" + txtslot.Text.Trim() + "','" + txtcourseno.Text.Trim() + "','" + txtsubject.Text.Trim() + "','" + txtiamark.Text.Trim() + "','" + txtexemark.Text.Trim() + "','" + txttotal.Text.Trim() + "','" + txtcredit.Text.Trim() + "','" + ddl_batchid.SelectedItem.Value + "','" + ddl_semid.SelectedItem.Text + "',1)";
                 SqlCommand cmd2 = new SqlCommand(sql, con);
                 cmd2.ExecuteNonQuery();
                 
@@ -136,13 +119,10 @@ namespace sample_internal
 
         protected void ddl_course_SelectedIndexChanged(object sender, EventArgs e)
         {
-            view_scheme_dropdown();
-        }
-
-        protected void ddl_scheme_SelectedIndexChanged(object sender, EventArgs e)
-        {
             view_batch_dropdown();
         }
+
+        
 
         protected void CLEAR_Click(object sender, EventArgs e)
         {
@@ -156,7 +136,7 @@ namespace sample_internal
             view_batch_dropdown();
             view_course_dropdown();
             view_dept_dropdown();
-            view_scheme_dropdown();
+            
             view_sem_dropdown();
         }
 

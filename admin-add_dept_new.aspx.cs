@@ -16,7 +16,7 @@ namespace sample_internal
 
             SqlConnection con = new SqlConnection("Data Source=.\\SQLEXPRESS;Initial Catalog=college_management;User ID=sa;Password=admin42");
             con.Open();
-            SqlCommand cmd1 = new SqlCommand("select dept_name as Departments from tbl_department order by dept_name ", con);
+            SqlCommand cmd1 = new SqlCommand("select dept_name as Departments from tbl_department where active=1  order by dept_name ", con);
             cmd1.ExecuteNonQuery();
             SqlDataAdapter da = new SqlDataAdapter(cmd1);
             DataTable dt = new DataTable();
@@ -31,7 +31,7 @@ namespace sample_internal
         {
             SqlConnection con = new SqlConnection("Data Source=.\\sqlexpress;Initial Catalog=college_management;User ID=sa;Password=admin42");
             con.Open();
-            SqlCommand cmd1 = new SqlCommand("select * from tbl_department where dept_name='" + txtdept.Text + "'", con);
+            SqlCommand cmd1 = new SqlCommand("select * from tbl_department where dept_name='" + txtdept.Text + "' and active=1 ", con);
             cmd1.ExecuteNonQuery();
             SqlDataAdapter da = new SqlDataAdapter(cmd1);
             DataTable dt = new DataTable();
@@ -44,7 +44,7 @@ namespace sample_internal
             else
             {
             
-                string sql = "insert into [tbl_department] (dept_name) values('" + txtdept.Text + "')";
+                string sql = "insert into [tbl_department] (dept_name,active) values('" + txtdept.Text + "',1)";
                 SqlCommand cmd2 = new SqlCommand(sql, con);
                 cmd2.ExecuteNonQuery(); 
                

@@ -5,10 +5,10 @@
             width: 122px;
         }
         .auto-style3 {
-            width: 345px;
+            width: 574px;
         }
         .auto-style4 {
-            width: 345px;
+            width: 574px;
             height: 22px;
         }
         .auto-style5 {
@@ -37,7 +37,7 @@
             height: 18px;
         }
         .auto-style16 {
-            width: 345px;
+            width: 574px;
             height: 18px;
         }
         .auto-style17 {
@@ -139,14 +139,14 @@
             <td class="auto-style3">&nbsp;</td>
             <td class="auto-style26">&nbsp;</td>
             <td class="auto-style2">
-                    <asp:Label ID="Label8" runat="server" Text="Select Scheme"></asp:Label>
+                <asp:Label ID="Label2" runat="server" Text="Select Batch"></asp:Label>
                 </td>
             <td class="auto-style17">&nbsp;</td>
             <td class="auto-style10">
                     &nbsp;</td>
             <td>
-                    <asp:DropDownList ID="ddl_scheme"  AutoPostBack="true" runat="server" OnSelectedIndexChanged="ddl_scheme_SelectedIndexChanged" >
-                    </asp:DropDownList>
+                <asp:DropDownList ID="ddl_batchid" runat="server">
+                </asp:DropDownList>
                 </td>
         </tr>
         <tr>
@@ -161,13 +161,17 @@
             <td class="auto-style3">&nbsp;</td>
             <td class="auto-style26">&nbsp;</td>
             <td class="auto-style2">
-                <asp:Label ID="Label2" runat="server" Text="Select Batch"></asp:Label>
+                <asp:Label ID="Label3" runat="server" Text="Select Sem"></asp:Label>
             </td>
             <td class="auto-style17">&nbsp;</td>
             <td class="auto-style10">
                 &nbsp;</td>
             <td>
-                <asp:DropDownList ID="ddl_batchid" runat="server">
+                <asp:DropDownList ID="ddl_semid" runat="server">
+                    <asp:ListItem>1</asp:ListItem>
+                    <asp:ListItem>2</asp:ListItem>
+                    <asp:ListItem>3</asp:ListItem>
+                    <asp:ListItem></asp:ListItem>
                 </asp:DropDownList>
             </td>
         </tr>
@@ -183,19 +187,12 @@
             <td class="auto-style4"></td>
             <td class="auto-style28"></td>
             <td class="auto-style6">
-                <asp:Label ID="Label3" runat="server" Text="Select Sem"></asp:Label>
-            </td>
+                &nbsp;</td>
             <td class="auto-style19"></td>
             <td class="auto-style9">
                 &nbsp;</td>
             <td class="auto-style5">
-                <asp:DropDownList ID="ddl_semid" runat="server">
-                    <asp:ListItem>1</asp:ListItem>
-                    <asp:ListItem>2</asp:ListItem>
-                    <asp:ListItem>3</asp:ListItem>
-                    <asp:ListItem></asp:ListItem>
-                </asp:DropDownList>
-            </td>
+                &nbsp;</td>
         </tr>
         <tr>
             <td class="auto-style3">&nbsp;</td>

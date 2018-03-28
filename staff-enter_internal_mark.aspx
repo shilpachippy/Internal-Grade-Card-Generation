@@ -36,16 +36,16 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <table class="nav-justified">
     <tr>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
-        <td class="auto-style8">&nbsp;</td>
-        <td class="auto-style2">&nbsp;</td>
-        <td class="auto-style9">&nbsp;</td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
+        <td class="auto-style3"></td>
+        <td class="auto-style3"></td>
+        <td class="auto-style4"></td>
+        <td class="auto-style3"></td>
+        <td class="auto-style7"></td>
+        <td class="auto-style3"></td>
+        <td class="auto-style3"></td>
+        <td class="auto-style3"></td>
+        <td class="auto-style3"></td>
+        <td class="auto-style3"></td>
     </tr>
     <tr>
         <td>&nbsp;</td>
@@ -60,16 +60,16 @@
         <td>&nbsp;</td>
     </tr>
     <tr>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
-        <td class="auto-style8">&nbsp;</td>
-        <td class="auto-style2">&nbsp;</td>
-        <td class="auto-style9">&nbsp;</td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
+        <td class="auto-style3"></td>
+        <td class="auto-style3"></td>
+        <td class="auto-style4"></td>
+        <td class="auto-style3"></td>
+        <td class="auto-style7"></td>
+        <td class="auto-style3"></td>
+        <td class="auto-style3"></td>
+        <td class="auto-style3"></td>
+        <td class="auto-style3"></td>
+        <td class="auto-style3"></td>
     </tr>
     <tr>
         <td>&nbsp;</td>
@@ -149,8 +149,8 @@
                         <asp:TextBox ID="txt_roll_no" runat="server"></asp:TextBox>
                         <br />
                         <br />
-                        <asp:Label ID="Label7" runat="server" Text="Enter Mark"></asp:Label>
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        &nbsp;&nbsp;&nbsp;&nbsp;<asp:Label ID="Label7" runat="server" Text="Enter Mark"></asp:Label>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         <asp:TextBox ID="txt_mark" runat="server" style="margin-left: 0px"></asp:TextBox>
                         <br />
                         <br />
@@ -305,16 +305,16 @@
         <td>&nbsp;</td>
     </tr>
     <tr>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
-        <td class="auto-style8">&nbsp;</td>
-        <td class="auto-style2">&nbsp;</td>
-        <td class="auto-style9">&nbsp;</td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
+        <td class="auto-style3"></td>
+        <td class="auto-style3"></td>
+        <td class="auto-style4"></td>
+        <td class="auto-style3"></td>
+        <td class="auto-style7"></td>
+        <td class="auto-style3"></td>
+        <td class="auto-style3"></td>
+        <td class="auto-style3"></td>
+        <td class="auto-style3"></td>
+        <td class="auto-style3"></td>
     </tr>
     <tr>
         <td>&nbsp;</td>
